@@ -17,7 +17,7 @@ class ArticlesBloc extends Bloc<ArticlesEvent, ArticlesState> {
   void mapFetchArticlesToState(FetchArticles event, emit) async {
     try {
       final response =
-          await articlesRemoteDatasource.fetchArticles(event.limit);
+          await articlesRemoteDatasource.fetchTodos(event.limit);
 
       emit(FetchArticlesSuccess(articles: response));
     } catch (e) {
